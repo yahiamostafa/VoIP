@@ -28,6 +28,7 @@ import kotlin.experimental.and
 
 class Voice : AppCompatActivity() {
 
+    // init requierd objects
     var m_AudioGroup: AudioGroup? = null
     var m_AudioStream: AudioStream? = null
     var srcIP: TextView? = null
@@ -43,6 +44,7 @@ class Voice : AppCompatActivity() {
         setContentView(R.layout.activity_voice)
         showDialog()
 
+        // Check if the permissions are granted or not
         permissionGranted = ActivityCompat.checkSelfPermission(
             this,
             Manifest.permission.RECORD_AUDIO
@@ -133,7 +135,8 @@ class Voice : AppCompatActivity() {
             } catch (e: Exception) {
                 Toast.makeText(this, e.localizedMessage, Toast.LENGTH_SHORT).show()
             }
-            for (b: Byte in bytes!!) localIp.append((b and 0xFF.toByte()).toString() + ".")
+            for (b: Byte in bytes!!) localIp.append((b.toUByte() and 0xFF.toUByte()).toString() + ".")
+
             return bytes
         }
 
