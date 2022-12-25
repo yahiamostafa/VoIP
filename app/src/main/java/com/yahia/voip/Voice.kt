@@ -71,6 +71,7 @@ class Voice : AppCompatActivity() {
             m_AudioGroup!!.mode = AudioGroup.MODE_NORMAL
             m_AudioStream = AudioStream(InetAddress.getByAddress(localIPAddress))
             val localPort = m_AudioStream!!.localPort
+            Toast.makeText(this, localPort.toString() , Toast.LENGTH_LONG)
             srcPort.setText(localPort.toString() + "")
             srcIP.setText(localIp.deleteCharAt(localIp.length - 1).toString())
             m_AudioStream!!.codec = AudioCodec.PCMU
