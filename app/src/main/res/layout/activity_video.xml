@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".Video">
 
-
     <EditText
         android:id="@+id/videoTxt"
         android:layout_width="match_parent"
@@ -17,7 +16,7 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/rounded_edit_text"
         android:gravity="center"
-        android:hint="Enter Your Video ID" />
+        android:hint="Enter Your Video Link" />
 
     <Button
         android:id="@+id/getBtn"
