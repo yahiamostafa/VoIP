@@ -18,9 +18,11 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
         // get the intent and the passed value
         val videoID : String? = intent.getStringExtra("VideoID")
 
+        val videoLink = videoID?.split("/")?.toTypedArray()
+
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                youTubePlayer.loadVideo(videoID.toString() ,  0f);
+                youTubePlayer.loadVideo(videoLink!!.last().toString() ,  0f);
             }
         })
     }
